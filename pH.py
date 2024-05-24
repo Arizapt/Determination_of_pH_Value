@@ -11,32 +11,32 @@ def main():
 
     show_splash_screen()
 
-    # Dictionary to store pH categories, colors, examples, and definitions
+    # Dictionary to store pH categories, colors, and definitions
     ph_categories = {
-        "BASA KUAT": (11, 14, "#8A2BE2", "Natrium Hidroksida (NaOH), Amonia (NH₃)", 
+        "BASA KUAT": (11, 14, "#8A2BE2", 
                       "Basa kuat adalah larutan dengan pH tinggi, yang berarti konsentrasi ion OH- dalam larutan tinggi. "
                       "Kegunaan Basa Kuat termasuk dalam produk pembersih rumah tangga, "
                       "pembuatan kertas, sabun, minuman ringan, pengawet makanan, dan obat-obatan."),
-        "BASA LEMAH": (9, 10, "#800080", "Soda Kue dan Sabun", 
+        "BASA LEMAH": (9, 10, "#800080", 
                        "Basa lemah adalah larutan dengan pH sedang, yang berarti konsentrasi ion OH- dalam larutan sedang. "
                        "Kegunaan Basa Lemah termasuk menyesuaikan atau menetralkan pH, pembuatan pupuk, "
                        "pemisahan senyawa organik, produksi kertas, dan menyesuaikan pH tanah."),
-        "BASA SANGAT LEMAH": (8, 8, "#0000FF", "Sabun", 
+        "BASA SANGAT LEMAH": (8, 8, "#0000FF", 
                               "Basa sangat lemah adalah larutan dengan pH rendah, yang berarti konsentrasi ion OH- dalam larutan rendah. "
                               "Kegunaan Basa Sangat Lemah termasuk menyesuaikan atau menetralkan pH, pembuatan pupuk, "
                               "dan produksi kertas."),
-        "NETRAL": (7, 7, "#008000", "Air Murni", 
+        "NETRAL": (7, 7, "#008000", 
                    "Netral adalah larutan dengan pH netral, yang berarti konsentrasi ion H+ dan OH- dalam larutan seimbang. "
                    "Kegunaan pH netral sebagai air mineral yang diminum sehari-hari oleh manusia."), 
-        "ASAM SANGAT LEMAH": (6, 6, "#FFFF00", "Susu", 
+        "ASAM SANGAT LEMAH": (6, 6, "#FFFF00", 
                               "Asam sangat lemah adalah larutan dengan pH rendah, yang berarti konsentrasi ion H+ dalam larutan sedang. "
                               "Kegunaan Asam Sangat Lemah termasuk sebagai etchant gigi, aditif makanan, pendispersi, "
                               "fluks, inhibitor karat, elektrolit, bahan baku pupuk, dan produk pembersih rumah."),
-        "ASAM LEMAH": (4, 5, "#FFA500", "Kopi Hitam, Tomat", 
+        "ASAM LEMAH": (4, 5, "#FFA500", 
                        "Asam lemah adalah larutan dengan pH rendah, yang berarti konsentrasi ion H+ dalam larutan sedang. "
                        "Kegunaan Asam Lemah termasuk sebagai etchant gigi, aditif makanan, pendispersi, "
                        "fluks, inhibitor karat, elektrolit, bahan baku pupuk, dan produk pembersih rumah."),
-        "ASAM KUAT": (1, 3, "#FF0000", "Asam Lambung, Jeruk, Apel", 
+        "ASAM KUAT": (1, 3, "#FF0000", 
                       "Asam kuat adalah larutan dengan pH sangat rendah, yang berarti konsentrasi ion H+ dalam larutan tinggi. "
                       "Kegunaan Asam Kuat termasuk cairan pengisi aki motor, bahan pupuk kimia, "
                       "dan pembersih logam dari korosi.")
@@ -81,11 +81,10 @@ def main():
 
     if sample_name in sample_to_ph:
         ph_category = sample_to_ph[sample_name]
-        min_val, max_val, color, example, definition = ph_categories[ph_category]
+        min_val, max_val, color, definition = ph_categories[ph_category]
         st.markdown(f"<p style='color:{color}; font-size: 24px;'>Nama Sampel: <strong>{sample_name}</strong></p>", unsafe_allow_html=True)
         st.markdown(f"<p style='color:{color}; font-size: 24px;'>Sifat Asam Basa: <strong>{ph_category}</strong></p>", unsafe_allow_html=True)
         st.markdown(f"<p style='color:{color}; font-size: 18px;'>Nilai pH: <strong>{min_val} - {max_val}</strong></p>", unsafe_allow_html=True)
-        st.markdown(f"<p style='color:{color}; font-size: 18px;'>Contoh: <em>{example}</em></p>", unsafe_allow_html=True)
         st.markdown(f"<p style='color:black; font-size: 18px;'>Pengertian: {definition}</p>", unsafe_allow_html=True)
     elif sample_name:
         st.write("Nama sampel tidak dikenali. Silakan coba lagi.")
