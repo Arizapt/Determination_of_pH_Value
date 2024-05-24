@@ -86,7 +86,7 @@ def main():
         st.markdown(f"<p style='color:{color}; font-size: 24px;'>Sifat Asam Basa: <strong>{ph_category}</strong></p>", unsafe_allow_html=True)
         st.markdown(f"<p style='color:{color}; font-size: 18px;'>Nilai pH: <strong>{min_val} - {max_val}</strong></p>", unsafe_allow_html=True)
         st.markdown(f"<p style='color:{color}; font-size: 18px;'>Contoh: <em>{example}</em></p>", unsafe_allow_html=True)
-        st.write(f"Pengertian: {definition}")
+        st.markdown(f"<p style='color:black; font-size: 18px;'>Pengertian: {definition}</p>", unsafe_allow_html=True)
     elif sample_name:
         st.write("Nama sampel tidak dikenali. Silakan coba lagi.")
 
